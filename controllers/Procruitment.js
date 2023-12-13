@@ -113,6 +113,10 @@ const createData = async (req, res) => {
     }
 };
 
+
+
+
+
 const deleteData = async (req, res) => {
     try {
         const { id } = req.params;
