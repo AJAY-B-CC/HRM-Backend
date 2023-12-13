@@ -50,7 +50,20 @@ const travelExpSchema = new mongoose.Schema({
             type: String,
             required: false
         }
-    }
-});
+    },
+    
+	reportingTo: [ 
+		{
+			employee: {
+			  type: mongoose.Schema.Types.ObjectId,
+			  ref: 'employee',
+			},
+			approved: {
+				type: Boolean,
+				default: false,
+			},
+		},
+	],
+})
 
 module.exports = mongoose.model('travelExp', travelExpSchema);
